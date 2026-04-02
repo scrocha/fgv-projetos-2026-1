@@ -55,7 +55,8 @@ def create_rds_instance(sg_id):
             PubliclyAccessible=True
         )
     except Exception as e:
-        if "DBInstanceAlreadyExists" not in str(e): raise e
+        if "DBInstanceAlreadyExists" not in str(e):
+            raise e
 
     rds.get_waiter('db_instance_available').wait(DBInstanceIdentifier=DB_IDENTIFIER)
     response = rds.describe_db_instances(DBInstanceIdentifier=DB_IDENTIFIER)
@@ -140,9 +141,9 @@ def main():
 
     except Exception as e:
         print(f"Erro: {e}")
-        
-    finally:
-        cleanup()
+    
+    # finally:
+    #     cleanup()
 
 if __name__ == "__main__":
     main()
