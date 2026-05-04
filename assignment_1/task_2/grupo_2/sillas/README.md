@@ -10,8 +10,9 @@ Implementacao simples e reexecutavel da task 2 usando:
 - `terraform/`: infraestrutura AWS
 - `glue/etl_job.py`: job ETL do AWS Glue
 - `scripts/load_classicmodels.py`: carga do banco de origem
+- `scripts/run_pipeline.py`: orquestrador de ponta a ponta com dry-run
 - `scripts/run_glue_job.py`: dispara e acompanha o Glue Job
-- `scripts/validate_pipeline.py`: valida status do job e saidas no S3
+- `scripts/validate_pipeline.py`: valida status do job, arquivos Parquet e regras de qualidade
 
 ## Pre-requisitos
 
@@ -26,6 +27,15 @@ Os scripts locais tambem tentam completar `DB_HOST`, `GLUE_JOB_NAME` e `S3_BUCKE
 Por padrao, o Glue usa a role existente `LabRole`, que neste laboratorio ja aceita `glue.amazonaws.com`. Se quiser sobrescrever isso, use `existing_glue_role_arn` ou `existing_glue_role_name`. So use `create_glue_role = true` se sua conta realmente puder criar IAM Role.
 
 ## Ordem de execucao
+
+```bash
+cd assignment_1/task_2/grupo_2/sillas
+uv sync
+uv run python scripts/run_pipeline.py --dry-run
+uv run python scripts/run_pipeline.py
+```
+
+## Execucao manual alternativa
 
 ```bash
 cd assignment_1/task_2/grupo_2/sillas
