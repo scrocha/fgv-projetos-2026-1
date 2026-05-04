@@ -29,7 +29,7 @@ Por padrao, o Glue usa a role existente `LabRole`, que neste laboratorio ja acei
 ## Ordem de execucao
 
 ```bash
-cd assignment_1/task_2/grupo_2/sillas
+cd assignment_1/task_2/grupo_2/final
 uv sync
 uv run python scripts/run_pipeline.py --dry-run
 uv run python scripts/run_pipeline.py
@@ -38,7 +38,7 @@ uv run python scripts/run_pipeline.py
 ## Execucao manual alternativa
 
 ```bash
-cd assignment_1/task_2/grupo_2/sillas
+cd assignment_1/task_2/grupo_2/final
 uv sync
 terraform -chdir=terraform init
 terraform -chdir=terraform apply
