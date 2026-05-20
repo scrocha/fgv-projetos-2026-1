@@ -1,0 +1,5 @@
+aws_region           = "us-east-1"
+glue_database_name   = "classicmodels_analytics"
+athena_workgroup_name = "classicmodels-analytics"
+data_lake_bucket     = "substitua-pelo-bucket-da-task-2"
+athena_results_prefix = "athena-results/"
