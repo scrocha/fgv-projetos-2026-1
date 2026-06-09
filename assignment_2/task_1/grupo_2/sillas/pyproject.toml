@@ -1,0 +1,13 @@
+[project]
+name = "assignment-2-task-1"
+version = "0.1.0"
+description = "Assignment 2 - Task 1: Incremental Source and Watermark"
+authors = [{ name = "Sillas", email = "sillas@example.com" }]
+dependencies = [
+    "mysql-connector-python>=8.0.0",
+    "python-dotenv>=1.0.0",
+]
+requires-python = ">=3.11"
+
+[tool.uv]
+package = false
